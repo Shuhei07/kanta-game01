@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>balltest</title>
+</head>
+<body>
+  <div id="app">
+    <img src="kanta-trim2.png" id="ball" width="200px">
+  </div>
+  <script>
+    var ball = document.getElementById("ball");
+    ball.onmousedown = function(event){
+      console.log("タップされたよ!");
+    }
+
+    ball.style.position = "absolute";
+
+    ball.onmousedown = function(event){
+        document.addEventListener("mousemove",onMouseMove);
+            }
+            var onMouseMove = function(event){
+            var x = event.clientX;
+            var y = event.clientY;
+            var width = ball.offsetWidth;
+            var height = ball.offsetHeight;
+            ball.style.top = (y-height/2) + "px";
+            ball.style.left = (x-width/2) + "px";
+    }
+
+
+
+  </script>
+</body>
+</html>
