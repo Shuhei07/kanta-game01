@@ -18,17 +18,27 @@
 
     ball.onmousedown = function(event){
         document.addEventListener("mousemove",onMouseMove);
-            }
-            var onMouseMove = function(event){
-            var x = event.clientX;
-            var y = event.clientY;
-            var width = ball.offsetWidth;
-            var height = ball.offsetHeight;
-            ball.style.top = (y-height/2) + "px";
-            ball.style.left = (x-width/2) + "px";
+    }
+    var onMouseMove = function(event){
+        var x = event.clientX;
+        var y = event.clientY;
+        var width = ball.offsetWidth;
+        var height = ball.offsetHeight;
+        ball.style.top = (y-height/2) + "px";
+        ball.style.left = (x-width/2) + "px";
     }
 
-
+    ball.ontouchmove =function(event) {
+        document.addEventListener("touchmove", onTouchMove);
+    }
+    var onTouchMove = function(event){
+        var x = event.clientX;
+        var y = event.clientY;
+        var width = ball.offsetWidth;
+        var height = ball.offsetHeight;
+        ball.style.top = (y-height/2) + "px";
+        ball.style.left = (x-width/2) + "px";
+    }
 
   </script>
 </body>
